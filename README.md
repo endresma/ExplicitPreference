@@ -6,4 +6,4 @@ Source code for the implementation of LSE described in the paper "M. Endres, T. 
 * DataGenerator contains files to generate input data for the algorithms.
 * BTG represents the lattice structure
 
-Note that this source code also needs the JGraphT library which can be found at http://jgrapht.org
+Note that this source code also needs the JGraphT library which can be found at https://github.com/jgrapht/jgrapht

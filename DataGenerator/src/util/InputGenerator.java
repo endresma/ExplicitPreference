@@ -59,6 +59,7 @@ public class InputGenerator {
      *
      * @return FlatLCResultSet
      */
+
     public static FlatLCResultSetA generateInput(int[] maxLevels, String distribution, int inputSize) {
         // "ind", "corr", "anti", "sortedanti"
 
@@ -106,7 +107,12 @@ public class InputGenerator {
         // real world distribution
         for (int i = 0; i < REAL_WORLD.length; i++) {
             if (distribution.equals(REAL_WORLD[i])) {
-                input = new FlatLCFileDataGenerator(realWorldData, inputSize, maxLevels);
+                if(distribution.equals("zillow")) {
+                    realWorldData = "zillow_data.txt";
+                    input = new FlatLCFileDataGenerator(realWorldData, inputSize, maxLevels);
+                } else
+                    throw new RuntimeException("Not supported at the moment: InputGenerator.generateInput(...)");
+
             }
         }
 

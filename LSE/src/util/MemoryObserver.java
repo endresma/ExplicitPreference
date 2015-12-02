@@ -45,6 +45,7 @@ public class MemoryObserver {
 
     /**
      * return used memory in bytes
+     *
      * @return
      */
     public static long currentMemory() {
@@ -59,5 +60,9 @@ public class MemoryObserver {
         return (usedMemory() - memory) / 1024. / 1024.;
     }
 
+
+    public static double runtimeMemory() {
+        return memory / 1024. / 1024.;
+    }
 
 }

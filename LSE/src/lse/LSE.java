@@ -23,9 +23,9 @@ import btg.BTGDataA;
 import btg.BTGDataI;
 import btg.BTGDataLevelBasedA;
 import flatlc.levels.FlatLevelCombination;
+import util.HashMapWrapper;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
 
 /**
@@ -37,9 +37,9 @@ import java.util.Iterator;
 public class LSE extends AbstractLS {
 
 
-    private HashMap<Object, ArrayList<Integer>> keySignature;
+    private HashMapWrapper keySignature;
 
-    public LSE(Iterator input, final BTGDataA btg, HashMap<Object, ArrayList<Integer>> keySignature) {
+    public LSE(Iterator input, final BTGDataA btg, HashMapWrapper keySignature) {
         super(input, btg);
         this.keySignature = keySignature;
 
@@ -54,13 +54,19 @@ public class LSE extends AbstractLS {
         // FIXME me, here I only use one-dimensional SPOs
         // just for testing the algorithm before implementing LSE
 
-        int[] objArr = flc.getLevelCombination();
-        int obj = objArr[0];
+        int[] flcComb = flc.getLevelCombination();
+        Object[] obj = new Object[flcComb.length];
+        for(int i=0; i<obj.length; ++i)
+            obj[i] = flcComb[i];
+        //        int obj = objArr[0];
 
         int id = -1;
 
         if (keySignature.containsKey(obj)) {
-            int[] lc = convertArrayList2Array(keySignature.get(obj));
+            //        int[] lc;
+            //        if((lc = containsKey(obj)) != null) {
+//            int[] lc = convertArrayList2Array(keySignature.get(obj));
+            int[] lc = keySignature.get(obj);
 
             id = btg.getID(lc);
 
@@ -74,6 +80,8 @@ public class LSE extends AbstractLS {
 
 
     }
+
+
 
 
     private int[] convertArrayList2Array(ArrayList<Integer> list) {

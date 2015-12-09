@@ -68,6 +68,8 @@ public class ExplicitPreference implements IPreference {
 
         Object A = ((FlatLevelCombination) objA).getLevelCombination()[0];
         Object B = ((FlatLevelCombination) objB).getLevelCombination()[0];
+        //        Object A = ((FlatLevelCombination) objA).getLevelCombination();
+        //        Object B = ((FlatLevelCombination) objB).getLevelCombination();
 
 
         if (A.equals(B)) {

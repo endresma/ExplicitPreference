@@ -51,14 +51,13 @@ public class LSE extends AbstractLS {
 
 
         FlatLevelCombination flc = (FlatLevelCombination) object;
-        // FIXME me, here I only use one-dimensional SPOs
-        // just for testing the algorithm before implementing LSE
-
         int[] flcComb = flc.getLevelCombination();
-        Object[] obj = new Object[flcComb.length];
-        for(int i=0; i<obj.length; ++i)
-            obj[i] = flcComb[i];
-        //        int obj = objArr[0];
+        // create ArrayList to search in HashMap
+        ArrayList<Integer> obj = new ArrayList<>();
+
+        for (int i = 0; i < flcComb.length; ++i) {
+            obj.add(flcComb[i]);
+        }
 
         int id = -1;
 
@@ -66,7 +65,7 @@ public class LSE extends AbstractLS {
             //        int[] lc;
             //        if((lc = containsKey(obj)) != null) {
             int[] lc = convertArrayList2Array(keySignature.get(obj));
-//            int[] lc = keySignature.get(obj);
+            //            int[] lc = keySignature.get(obj);
 
             id = btg.getID(lc);
 
@@ -80,8 +79,6 @@ public class LSE extends AbstractLS {
 
 
     }
-
-
 
 
     private int[] convertArrayList2Array(ArrayList<Integer> list) {

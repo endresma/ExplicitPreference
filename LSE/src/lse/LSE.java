@@ -23,9 +23,9 @@ import btg.BTGDataA;
 import btg.BTGDataI;
 import btg.BTGDataLevelBasedA;
 import flatlc.levels.FlatLevelCombination;
-import util.HashMapWrapper;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 
 /**
@@ -37,9 +37,9 @@ import java.util.Iterator;
 public class LSE extends AbstractLS {
 
 
-    private HashMapWrapper keySignature;
+    private HashMap<ArrayList<Object>, ArrayList<Integer>> keySignature;
 
-    public LSE(Iterator input, final BTGDataA btg, HashMapWrapper keySignature) {
+    public LSE(Iterator input, final BTGDataA btg, HashMap<ArrayList<Object>, ArrayList<Integer>> keySignature) {
         super(input, btg);
         this.keySignature = keySignature;
 
@@ -65,8 +65,8 @@ public class LSE extends AbstractLS {
         if (keySignature.containsKey(obj)) {
             //        int[] lc;
             //        if((lc = containsKey(obj)) != null) {
-//            int[] lc = convertArrayList2Array(keySignature.get(obj));
-            int[] lc = keySignature.get(obj);
+            int[] lc = convertArrayList2Array(keySignature.get(obj));
+//            int[] lc = keySignature.get(obj);
 
             id = btg.getID(lc);
 

@@ -28,6 +28,7 @@ import spo.OrderedPairOrder;
 import util.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 
 /**
@@ -324,7 +325,7 @@ public class Experiment {
             /** run LSE-SL  */
 
             //            HashMap<Object, ArrayList<Integer>> keySign = graph.getKeySignatureAssignments();
-            HashMapWrapper keySign = graph.getKeySignatureAssignments();
+            HashMap<ArrayList<Object>, ArrayList<Integer>> keySign = graph.getKeySignatureAssignments();
 
             System.out.println("\n\n ********** Run LSE-HM *********** ");
 

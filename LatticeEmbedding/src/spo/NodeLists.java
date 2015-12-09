@@ -23,8 +23,8 @@ import java.util.ArrayList;
 
 public class NodeLists {
 
-    ArrayList<Object> list1;
-    ArrayList<Object> list2;
+    ArrayList<ArrayList<Integer>> list1;
+    ArrayList<ArrayList<Integer>> list2;
 
     Object[] array_of_2_lists = new Object[2];
 
@@ -32,18 +32,18 @@ public class NodeLists {
     /**
      * 2 lists: list1 one contains nodes, all are better than all nodes from list2
      */
-    public NodeLists(ArrayList<Object> list1, ArrayList<Object> list2) {
+    public NodeLists(ArrayList<ArrayList<Integer>> list1, ArrayList<ArrayList<Integer>> list2) {
         this.list1 = list1;
         this.list2 = list2;
     }
 
 
-    public ArrayList<Object> getList1() {
+    public ArrayList<ArrayList<Integer>> getList1() {
         return list1;
     }
 
 
-    public ArrayList<Object> getList2() {
+    public ArrayList<ArrayList<Integer>> getList2() {
         return list2;
     }
 

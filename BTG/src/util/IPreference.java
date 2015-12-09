@@ -27,6 +27,8 @@ public interface IPreference {
 
     public int compare(Object objA, Object objB);
 
+    public int compare(Object objA, Object objB, int idx);
+
     /**
      * Expresses that an object is equal to another one. This value will be
      * returned if and only if <code>o1.equals(o2) == true</code> for two
@@ -52,7 +54,7 @@ public interface IPreference {
      * the underlying preference but not identical. Not identical means
      * always return <code>false</code>.
      */
-    public final int SUBSTITUTABLE = 2;
+//    public final int SUBSTITUTABLE = 2;
 
 
     /**

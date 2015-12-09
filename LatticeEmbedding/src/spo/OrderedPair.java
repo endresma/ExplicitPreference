@@ -19,7 +19,7 @@
 package spo;
 
 public class OrderedPair {
-	
+
 	private Object child;
 	private Object parent;
 

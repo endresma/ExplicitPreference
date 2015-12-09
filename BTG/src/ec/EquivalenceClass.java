@@ -74,7 +74,7 @@ public class EquivalenceClass implements IEquivalenceClass {
         // oder SUBSTITUTABLE ist)
         switch (this.lvl.compare(level)) {
             case IPreference.EQUAL:
-            case IPreference.SUBSTITUTABLE:
+//            case IPreference.SUBSTITUTABLE:
                 return elements.add(level);
         }
         return false;
@@ -93,8 +93,8 @@ public class EquivalenceClass implements IEquivalenceClass {
         switch (this.lvl.compare(ec.getLevelCombination())) {
             case IPreference.EQUAL:
                 break;
-            case IPreference.SUBSTITUTABLE:
-                break;
+//            case IPreference.SUBSTITUTABLE:
+//                break;
             default:
                 return false;
         }

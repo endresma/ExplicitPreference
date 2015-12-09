@@ -16,13 +16,13 @@
  *
  */
 
-package util;
+package preference;
 
 import flatlc.levels.FlatLevelCombination;
 import org.jgrapht.DirectedGraph;
 import org.jgrapht.alg.BellmanFordShortestPath;
 import org.jgrapht.graph.DefaultEdge;
-import spo.OrderedGraph;
+import util.IPreference;
 
 /**
  * <p/>
@@ -46,13 +46,25 @@ public class ExplicitPreference implements IPreference {
     private DirectedGraph<Object, DefaultEdge> graph;
 
 
-    public ExplicitPreference(OrderedGraph graph) {
+    //    public ExplicitPreference(OrderedGraph graph) {
+    public ExplicitPreference(DirectedGraph<Object, DefaultEdge> graph) {
 
-        this.graph = graph.getgraph();
-
+        //        this.graph = graph.getgraph();
+        this.graph = graph;
     }
 
+    /**
+     * compare objA with objB at position idx
+     * @param objA
+     * @param objB
+     * @param idx
+     * @return
+     */
     public int compare(Object objA, Object objB) {
+        return this.compare(objA, objB, 0);
+    }
+
+    public int compare(Object objA, Object objB, int idx) {
 
 
         if (objA == null || objB == null) {
@@ -66,8 +78,8 @@ public class ExplicitPreference implements IPreference {
         //        Object A = objA;
         //        Object B = objB;
 
-        Object A = ((FlatLevelCombination) objA).getLevelCombination()[0];
-        Object B = ((FlatLevelCombination) objB).getLevelCombination()[0];
+        Object A = ((FlatLevelCombination) objA).getLevelCombination()[idx];
+        Object B = ((FlatLevelCombination) objB).getLevelCombination()[idx];
         //        Object A = ((FlatLevelCombination) objA).getLevelCombination();
         //        Object B = ((FlatLevelCombination) objB).getLevelCombination();
 

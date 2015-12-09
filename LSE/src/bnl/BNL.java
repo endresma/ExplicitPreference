@@ -79,8 +79,7 @@ public class BNL implements Iterator {
             int cCounter = 0;
             for (int i = 0; i < candidates.size(); i++) {
                 cCounter++;
-                int result = IPreference.UNRANKED;
-                result = preference.compare(candidates.get(i), cand);
+                int result = preference.compare(candidates.get(i), cand);
                 nrOfcomparison++;
 
                 //        System.out.println("current: " + cand);
@@ -106,7 +105,7 @@ public class BNL implements Iterator {
                         break;
                     case IPreference.EQUAL:
                         // objects are equal: new element cannot be dominated by others
-                    case IPreference.SUBSTITUTABLE:
+                        //                    case IPreference.SUBSTITUTABLE:
                         // objects are substitutable: cand cannot be dominated by others
                         candidates.add(cand);
                         //            System.out.println("Checked: " + cCounter);

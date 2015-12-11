@@ -110,6 +110,12 @@ public class BreadthFirstIterator_<V, E> extends CrossComponentIteratorEdge<V, E
         if (queue.size() == 1) {
             Object o = queue.removeFirst();
             if (o == SENTINEL) {
+            	if(resultTuple.containsKey(OrderedGraph.VIRTUAL_TOPNODE)){
+            		resultTuple.remove(OrderedGraph.VIRTUAL_TOPNODE);
+            	}
+            	if(resultTuple.containsKey(OrderedGraph.VIRTUAL_BOTTOMNODE)){
+            		resultTuple.remove(OrderedGraph.VIRTUAL_BOTTOMNODE);
+            	}
                 return true;
             } else {
                 V v = TypeUtil.uncheckedCast(o, vertexTypeDecl);

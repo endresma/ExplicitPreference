@@ -41,6 +41,9 @@ public class LSE extends AbstractLS {
 
     public LSE(Iterator input, final BTGDataA btg, HashMap<ArrayList<Object>, ArrayList<Integer>> keySignature) {
         super(input, btg);
+
+        //        this.input = TopSort.sort(input);
+        //        this.btg = btg;
         this.keySignature = keySignature;
 
 

@@ -59,7 +59,7 @@ public class BTGDataLevelBasedHashMap extends BTGDataLevelBasedA {
     @Override
     protected Map getNewMap(int level) {
         int initialCapacity = btg.getWidth(level);
-        return new ConcurrentHashMap<Integer, EquivalenceClass>(initialCapacity, 100);
+        return new ConcurrentHashMap<>(initialCapacity, 100);
     }
 
 

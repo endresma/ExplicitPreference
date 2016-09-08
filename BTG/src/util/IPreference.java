@@ -49,11 +49,11 @@ public interface IPreference {
     public final int LESS = -1;
 
 
-    /**
-     * Expresses that two objects are equal and substitutable with respect to
-     * the underlying preference but not identical. Not identical means
-     * always return <code>false</code>.
-     */
+//    /**
+//     * Expresses that two objects are equal and substitutable with respect to
+//     * the underlying preference but not identical. Not identical means
+//     * always return <code>false</code>.
+//     */
 //    public final int SUBSTITUTABLE = 2;
 
 

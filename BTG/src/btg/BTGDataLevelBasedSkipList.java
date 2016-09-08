@@ -62,7 +62,7 @@ public class BTGDataLevelBasedSkipList extends BTGDataLevelBasedA {
 
     @Override
     protected Map getNewMap(int level) {
-        return new ConcurrentSkipListMap<Integer, EquivalenceClass>();
+        return new ConcurrentSkipListMap<>();
     }
 
 
